@@ -1,7 +1,7 @@
 import React from 'react';
 import Main from './components/Main.jsx';
 
-export default function Login(props) {
+export default function Login({ messages }) {
   return (
     <Main>
         <main className="container">
@@ -15,11 +15,11 @@ export default function Login(props) {
       messages.info.forEach( el => { %>
       <div class="alert alert-info"><%= el.msg %></div>
       <% }) %> <% } %> */}
-      {props.messages.errors && props.messages.errors.map((el, i )=>
+      {messages.errors && messages.errors.map((el, i )=>
             <div key={i} className="alert alert-danger">{el.msg}</div>
       )}
-      {props.messages.info 
-        ? props.messages.info.map((el, i )=>
+      {messages.info 
+        ? messages.info.map((el, i )=>
             <div key={i} className="alert alert-danger">{el.msg}</div>
             )
         : null
